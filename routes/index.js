@@ -2,17 +2,18 @@ let express = require('express');
 let router = express.Router();
 const User = require('../model/usercrud'); 
 
-router.get('/', function (req, res, next) {
-  res.render('index', { title: 'Express'});
+router.get('/',async function (req, res, next) {
+  let data = await User.find()
+  res.render('index', { title: 'Express' , data});
 
 });
 
-router.post('/', function (req, res) {
+router.post('/',async function (req, res) {
 
   const {email, password} = req.body
 
   if(email && password) {
-    User.create(req.body)
+    await User.create(req.body)
     return res.redirect('/')
   }
 

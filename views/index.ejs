@@ -15,14 +15,14 @@
       
     </form>
 
-    <table>
+    <table border="1">
       <tr>
         <th>Email</th>
         <th>Password</th>
         <th>Action</th>
       </tr>
 
-       <% userDataSchema.map(el => { %>
+       <% data.map(el => { %>
         <tr>
           <td><%= el.email %></td>
           <td><%= el.password %></td>
