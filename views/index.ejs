@@ -6,10 +6,36 @@
   </head>
   <body>
     <form action="/" method="post">
-      <input type="email">
-      <input type="password">
+
+
+      Email : <input type="email" name="email"> <br><br>
+      Password : <input type="password" name="password"><br><br>
       <input type="submit">
+
       
     </form>
+
+    <table>
+      <tr>
+        <th>Email</th>
+        <th>Password</th>
+        <th>Action</th>
+      </tr>
+
+       <% userDataSchema.map(el => { %>
+        <tr>
+          <td><%= el.email %></td>
+          <td><%= el.password %></td>
+          <td>
+            <a href=""><button>Delete</button></a>
+            <a href=""><button>Edit</button></a>
+          </td>
+        </tr>
+        
+      <% }) %> 
+
+    </table>
+
+
   </body>
 </html>

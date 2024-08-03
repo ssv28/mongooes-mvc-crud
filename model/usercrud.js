@@ -1,8 +1,12 @@
-const { Mongoose } = require("mongoose");
+const mongoose = require('mongoose');
 
-let Schema = Mongoose.Schema
-let userData = new Schema ({
+const Schema = mongoose.Schema;                        // Create a new schema
+const userDataSchema = new Schema({
+  email: String,
+  password : String
+});
 
-})
 
-module.exports = USER
+const User = mongoose.model('User', userDataSchema);           // Create a model from the schema
+
+module.exports = User;           // Export the model

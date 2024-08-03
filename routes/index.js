@@ -1,14 +1,22 @@
-var express = require('express');
-var router = express.Router();
+let express = require('express');
+let router = express.Router();
+const User = require('../model/usercrud'); 
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+router.get('/', function (req, res, next) {
+  res.render('index', { title: 'Express'});
+
 });
 
-router.post('/', function(req, res)  {
+router.post('/', function (req, res) {
 
-  res.end()
+  const {email, password} = req.body
+
+  if(email && password) {
+    User.create(req.body)
+    return res.redirect('/')
+  }
+
+ 
 })
 
 module.exports = router;
