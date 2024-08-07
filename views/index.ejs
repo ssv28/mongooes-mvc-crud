@@ -13,20 +13,22 @@
 
     <h1 style="text-align: center;">Admin Form</h1><br><br>
 
-    <form action="/" method="post">
+    <form action="/" method="post" style="text-align: center;">
 
       <input type="hidden" name="inputData" value="<%= editid %>">
       Email : <input type="email" name="email" value="<%= input.email %>"> <br><br>
-      Password : <input type="password" name="password" value="<%= input.password %>"><br><br>
+      Password : <input type="password" name="password" value="<%= input.password %>"><br><br><br>
 
-      <input type="submit">
+      <input type="submit" style="padding: 3px 20px;">
 
     </form>
   </div>
 
   <br><br><br>
 
-  <table border="1" width="40%">
+  <h2>Submitted Data</h2> <br>
+
+  <table border="1" width="40%" style="text-align: center;">
     <tr>
       <th>Email</th>
       <th>Password</th>
@@ -43,8 +45,8 @@
           <%= el.password %>
         </td>
         <td>
-          <a href="/?delid=<%= el._id %>"><button>Delete</button></a>
-          <a href="/?editid=<%= el._id %>"><button>Update</button></a>
+          <a href="/?delid=<%= el._id %>"><button style="padding: 2px 10px;">Delete</button></a>
+          <a href="/?editid=<%= el._id %>"><button style="padding: 2px 10px;">Update</button></a>
         </td>
       </tr>
 
