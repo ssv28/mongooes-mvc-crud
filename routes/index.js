@@ -6,11 +6,11 @@ router.get('/', async function (req, res, next) {
 
   //------------------------------------------------------------------------------------------
 
-  let data = await User.find();  // Find data
+  let data = await User.find();             // Find data
 
   //------------------------------------------------------------------------------------------
 
-  let delid = req.query.delid;  // Delete data
+  let delid = req.query.delid;               // Delete data
   console.log(delid);
 
 
@@ -22,7 +22,7 @@ router.get('/', async function (req, res, next) {
 
   //------------------------------------------------------------------------------------------
 
-  let editid = req.query.editid;  // Edit data
+  let editid = req.query.editid;                        // Edit data
   console.log(editid);
 
 
@@ -31,7 +31,7 @@ router.get('/', async function (req, res, next) {
 
 
   if (editid) {
-    input = await User.findById(editid);  // Find the user by ID
+    input = await User.findById(editid);            // Find the user by ID
 
   }
 
@@ -45,18 +45,18 @@ router.get('/', async function (req, res, next) {
 
 router.post('/', async function (req, res) {
 
-  const { email, password, inputData } = req.body;  // Create or update data
+  const { email, password, inputData } = req.body;           // Create or update data
   console.log(req.body);
 
 
   if (email && password) {
 
     if (inputData) {
-      await User.findByIdAndUpdate(inputData, req.body);  // Update user
+      await User.findByIdAndUpdate(inputData, req.body);                // Update user
 
     }
     else {
-      await User.create(req.body);  // Create new user
+      await User.create(req.body);              // Create new user
 
     }
 
